@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Redes sociais e contatos de Pedro Messaggio.">
+  <title>Pedro Messaggio — Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111111;
+      --card: #1b1b1b;
+      --text: #f5f5f3;
+      --muted: #a5a5a5;
+      --orange: #ff6b01;
+      --border: #303030;
+      --shadow: 0 12px 28px rgba(0, 0, 0, .28);
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(100% - 32px, 620px);
+      margin: 0 auto;
+      padding: 58px 0 28px;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 4px 0 24px;
+    }
+    .avatar {
+      flex: 0 0 88px;
+      width: 88px;
+      height: 88px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: #242424;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: var(--orange);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar svg { width: 34px; height: 34px; }
+    h1 {
+      margin: 0;
+      font-size: clamp(25px, 5.8vw, 36px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .name-normal { font-weight: 500; }
+    .name-extra { font-weight: 800; }
+    .handle { margin: 8px 0 0; color: var(--orange); font-size: 14px; }
+    .intro {
+      margin: 0 0 30px;
+      max-width: 48ch;
+      color: #c5c5c5;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-head::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .socials { display: grid; gap: 10px; }
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 82px;
+      padding: 15px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      text-decoration: none;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      will-change: transform;
+    }
+    .social-card:hover, .social-card:focus-visible, .social-card.is-touch-active {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #555;
+      outline: none;
+    }
+    .social-card:active { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .social-card:active {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(0, 0, 0, .24);
+    }
+    .social-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #252525;
+      color: var(--orange);
+    }
+    .social-icon svg { width: 22px; height: 22px; }
+    .social-copy { flex: 1; min-width: 0; }
+    .social-copy strong { display: block; font-size: 16px; font-weight: 700; }
+    .social-copy span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    .arrow {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--orange);
+      color: #111;
+      transition: transform 220ms ease;
+    }
+    .arrow svg { width: 17px; height: 17px; }
+    .social-card:hover .arrow { transform: translate(2px, -2px); }
+    .invite {
+      margin-top: 30px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .invite:hover, .invite.is-touch-active { transform: translateY(-5px); box-shadow: var(--shadow); border-color: #555; }
+    .invite:active { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .invite:active { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(0, 0, 0, .24); }
+    .invite-top { display: flex; align-items: center; gap: 12px; }
+    .invite-icon {
+      display: grid; place-items: center; width: 44px; height: 44px;
+      border-radius: 10px; background: #252525; color: var(--orange); flex: 0 0 44px;
+    }
+    .invite-icon svg { width: 23px; height: 23px; }
+    .invite h2 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
+    .invite p { margin: 13px 0 18px; max-width: 48ch; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .cta {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 16px;
+      border-radius: 9px;
+      background: var(--orange);
+      color: #111;
+      text-decoration: none;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+    }
+    .cta:hover, .cta:focus-visible { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(255, 107, 1, .16); filter: brightness(1.04); outline: none; }
+    .cta:active { transform: translateY(0); box-shadow: 0 3px 10px rgba(255, 107, 1, .12); }
+    .cta svg { width: 17px; height: 17px; }
+    footer { padding: 26px 0 0; text-align: center; color: #686868; font-size: 12px; }
+    footer span { color: var(--orange); }
+    @media (min-width: 680px) {
+      .page { padding-top: 72px; }
+      .socials { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .social-card { min-height: 96px; padding: 16px; }
+      .invite { padding: 25px; }
+    }
+    @media (hover: none) and (pointer: coarse) {
+      .social-card, .invite, .cta { -webkit-tap-highlight-color: transparent; }
+      .social-card:active { border-color: #555; }
+      .invite:active { border-color: #555; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="profile">
+      <div class="avatar" id="avatar" aria-label="Foto de perfil de Pedro">
+        <!-- Opcional: substitua o ícone por uma foto. Veja LEIA-ME.txt. -->
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4.5 20c.8-4 3.3-6 7.5-6s6.7 2 7.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1><span class="name-normal">Pedro</span> <span class="name-extra">Messaggio</span></h1>
+        <p class="handle">@opedromessaggio</p>
+      </div>
+    </header>
+
+    <p class="intro">Meus conteúdos, projetos e lugares onde podemos nos conectar.</p>
+
+    <section aria-labelledby="social-title">
+      <h2 class="section-head" id="social-title">Encontre-me por aí</h2>
+      <div class="socials">
+        <a class="social-card" href="https://www.instagram.com/opedromessaggio/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Pedro Messaggio">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.6" cy="6.7" r="1" fill="currentColor"/></svg>
+          </span>
+          <span class="social-copy"><strong>Instagram</strong><span>Conteúdos e bastidores</span></span>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="social-card" href="https://www.tiktok.com/@opedromessaggio" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok de Pedro Messaggio">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 3v11.1a4.1 4.1 0 1 1-3.3-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 3c.5 3 2.2 4.8 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="social-copy"><strong>TikTok</strong><span>Vídeos e ideias</span></span>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="social-card" href="https://www.youtube.com/@opedromessaggio" target="_blank" rel="noopener noreferrer" aria-label="Abrir YouTube de Pedro Messaggio">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5.5" width="18" height="13" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg>
+          </span>
+          <span class="social-copy"><strong>YouTube</strong><span>Vídeos e projetos</span></span>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="social-card" href="https://www.facebook.com/profile.php?id=100080107650773&amp;locale=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook de Pedro Messaggio">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M13.5 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" fill="currentColor"/></svg>
+          </span>
+          <span class="social-copy"><strong>Facebook</strong><span>Publicações e vídeos</span></span>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="invite" aria-labelledby="invite-title">
+      <div class="invite-top">
+        <span class="invite-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="8" y="3" width="8" height="13" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3m-4 0h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <h2 id="invite-title">Convites para ministrar</h2>
+      </div>
+      <p>Para igrejas, conferências e eventos cristãos que desejam conversar sobre um convite de ministração.</p>
+      <a class="cta" id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer">
+        Conversar sobre convite
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <footer>Feito com intenção. <span>♥</span></footer>
+  </main>
+
+  <script>
+    /*
+      PERSONALIZAÇÃO RÁPIDA:
+      1. Para adicionar a foto, coloque um arquivo chamado "pedro.jpg" na mesma pasta
+         deste HTML e descomente as duas linhas abaixo.
+      2. Para ativar o WhatsApp, substitua 55DDDNUMERO pelo número com código do país,
+         DDD e número, somente dígitos. Ex.: 5551999999999.
+    */
+    // document.getElementById('avatar').innerHTML = '<img src="pedro.jpg" alt="Pedro Messaggio">';
+    const whatsappNumber = '5551997076252';
+    const message = 'Oii, Pedro! Gostaria de te convidar para ministrar na minha igreja. Como podemos conversar sobre isso?';
+    // Em telas sensíveis ao toque, reproduz a elevação visual ao tocar ou deslizar sobre os cards.
+    const touchCards = document.querySelectorAll(".social-card, .invite");
+    touchCards.forEach((card) => {
+      card.addEventListener("touchstart", () => {
+        card.classList.add("is-touch-active");
+      }, { passive: true });
+      const clearTouch = () => card.classList.remove("is-touch-active");
+      card.addEventListener("touchend", clearTouch, { passive: true });
+      card.addEventListener("touchcancel", clearTouch, { passive: true });
+    });
+    if (/^55\d{10,11}$/.test(whatsappNumber)) {
+      document.getElementById('whatsapp-link').href =
+        'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+    } else {
+      document.getElementById('whatsapp-link').addEventListener('click', function (event) {
+        event.preventDefault();
+        alert('Adicione seu número de WhatsApp no arquivo index.html para ativar este botão.');
+      });
+    }
+  </script>
+</body>
+</html>
